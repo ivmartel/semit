@@ -1,0 +1,4 @@
+# The Nifti source tree.
+set(Nifti_INCLUDE_DIRS "@Nifti_INCLUDE_DIRS@")
+set(Nifti_LIBRARY_DIRS "@Nifti_LIBRARY_DIRS@")
+set(Nifti_USE_FILE "@Nifti_USE_FILE@")

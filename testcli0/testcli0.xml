@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="utf-8"?>
+<executable>
+  <category>Tests</category>
+  <title>Test CLP #0</title>
+  <description>Test that basic input arguments are passed correctly and that defaults are respected.</description>
+  <version>0.1</version>
+  <documentation-url>http://www.commontk.org/index.php/Documentation/CLI_In_Context</documentation-url>
+  <acknowledgements>Merci a tous!</acknowledgements> 
+  <license></license>
+  <contributor>CTK</contributor>
+
+  <parameters>
+    <label>Test Parameters</label>
+    <description>Basic CLP Parameters</description>
+    
+	<!-- 
+	Flags are basic alphabet (except h reserved for help), no specific meaning.
+	The tag order is the one of the slicer cli doc:
+	http://www.slicer.org/slicerWiki/index.php/Slicer3:Execution_Model_Documentation 
+	-->
+	
+	<integer>
+      <name>tInt</name>
+      <flag>-a</flag>
+      <longflag>--tint</longflag>
+      <description>Test int support.</description>
+      <label>An int value</label>
+      <default>1</default>
+    </integer>
+
+	<float>
+      <name>tFloat</name>
+      <flag>-b</flag>
+      <longflag>--tfloat</longflag>
+      <description>Test float support.</description>
+      <label>A float value</label>
+      <default>1.0</default>
+    </float>
+
+    <double>
+      <name>tDouble</name>
+      <flag>-c</flag>
+      <longflag>--tdouble</longflag>
+      <description>Test double support.</description>
+      <label>A double value</label>
+      <default>1.0</default>
+    </double>
+
+    <boolean>
+      <name>tBool</name>
+      <flag>-d</flag>
+      <longflag>--tbool</longflag>
+      <description>Test bool support.</description>
+      <label>A bool value</label>
+	  <!-- Default for bool is always false -->
+      <!-- <default>false</default> -->
+    </boolean>
+
+    <string>
+      <name>tString</name>
+      <flag>-e</flag>
+      <longflag>--tstring</longflag>
+      <description>Test string support.</description>
+      <label>A string value</label>
+      <default>a</default>
+    </string>
+
+	<integer>
+      <name>tInt2</name>
+      <flag>-f</flag>
+      <longflag>--tint2</longflag>
+      <description>Test int support with constraints.</description>
+      <label>A constrained int value</label>
+      <default>2</default>
+      <constraints>
+        <minimum>0</minimum>
+        <maximum>10</maximum>
+        <step>2</step>
+      </constraints>
+    </integer>
+
+    <double>
+      <name>tDouble2</name>
+      <longflag>--tdouble2</longflag>
+      <flag>-g</flag>
+      <description>Test double support with constraints.</description>
+      <label>A constrained double value</label>
+      <default>2.0</default>
+      <constraints>
+        <minimum>0.0</minimum>
+        <maximum>10.0</maximum>
+        <step>2.0</step>
+      </constraints>
+    </double>
+	
+    <integer-vector>
+      <name>tIntVector</name>
+      <flag>-i</flag>
+      <longflag>--tintvector</longflag>
+      <description>Test int vector support.</description>
+      <label>An int vector</label>
+      <default>1, 2, 3, 4</default>
+    </integer-vector>
+
+    <float-vector>
+      <name>tFloatVector</name>
+      <flag>-j</flag>
+      <longflag>--tfloatvector</longflag>
+      <description>Test float vector support.</description>
+      <label>A float vector</label>
+      <default>1.0, 2.0, 3.0, 4.0</default>
+    </float-vector>
+	
+    <double-vector>
+      <name>tDoubleVector</name>
+      <flag>-k</flag>
+      <longflag>--tdoublevector</longflag>
+      <description>Test double vector support.</description>
+      <label>A double vector</label>
+      <default>1.0, 2.0, 3.0, 4.0</default>
+    </double-vector>
+	
+    <string-vector>
+      <name>tStringVector</name>
+      <flag>-l</flag>
+      <longflag>--tstringvector</longflag>
+      <description>Test string vector support.</description>
+      <label>A string vector</label>
+ 	  <!-- Carreful, not blank space with string -->
+      <default>a,b,c,d</default>
+    </string-vector>
+
+	<integer-enumeration>
+      <name>tIntEnum</name>
+      <flag>-m</flag>
+      <longflag>--tintenum</longflag>
+      <description>Test int enum support</description>
+      <label>Choose an int</label>
+      <element>3</element>
+      <element>2</element>
+      <element>1</element>
+ 	  <!-- Default is not the first one on purpose -->
+      <default>1</default>
+    </integer-enumeration>
+    
+	<float-enumeration>
+      <name>tFloatEnum</name>
+      <flag>-n</flag>
+      <longflag>--tfloatenum</longflag>
+      <description>Test float enum support</description>
+      <label>Choose a float</label>
+      <element>3.0</element>
+      <element>2.0</element>
+      <element>1.0</element>
+ 	  <!-- Default is not the first one on purpose -->
+      <default>1.0</default>
+    </float-enumeration>
+    
+	<double-enumeration>
+      <name>tDoubleEnum</name>
+      <flag>-o</flag>
+      <longflag>--tdoubleenum</longflag>
+      <description>Test double enum support</description>
+      <label>Choose a double</label>
+	  <element>3.0</element>
+      <element>2.0</element>
+      <element>1.0</element>
+ 	  <!-- Default is not the first one on purpose -->
+      <default>1.0</default>
+    </double-enumeration>
+    
+	<string-enumeration>
+      <name>tStrEnum</name>
+      <flag>-p</flag>
+      <longflag>--tstrenum</longflag>
+      <description>Test string enumeration support.</description>
+      <label>Choose a string</label>
+      <element>c</element>
+      <element>b</element>
+      <element>a</element>
+ 	  <!-- Default is not the first one on purpose -->
+      <default>a</default>
+    </string-enumeration>
+    
+    <file>
+      <name>tFile</name>
+      <flag>-q</flag>
+      <longflag>--tfile</longflag>
+      <description>Test file support.</description>
+      <label>A file value</label>
+      <default>file.txt</default>
+    </file>
+
+    <directory>
+      <name>tDirectory</name>
+      <flag>-r</flag>
+      <longflag>--tdirectory</longflag>
+      <description>Test directory support.</description>
+      <label>A directory value</label>
+      <default>/a/b/c</default>
+    </directory>
+
+    <image>
+      <name>tImage</name>
+      <flag>-s</flag>
+      <longflag>--timage</longflag>
+      <label>An image value</label>
+      <description>Test image support.</description>
+      <default>image.img</default>
+    </image>
+	
+    <geometry>
+      <name>tGeometry</name>
+      <flag>-t</flag>
+      <longflag>--tgeometry</longflag>
+      <label>A geometry value</label>
+      <description>Test geometry support.</description>
+      <default>geometry.vtk</default>
+    </geometry>
+	
+    <!-- TODO Test on coordinates -->
+	<point coordinateSystem="ras">
+      <name>tPoint</name>
+      <flag>-u</flag>
+      <longflag>--tpoint</longflag>
+      <label>A point value</label>
+      <description>Test point support.</description>
+      <!-- Could be more dimensions, 3D is enough -->
+      <default>1.0, 2.0, 3.0</default>
+    </point>
+	
+    <region>
+      <name>tRegion</name>
+      <flag>-v</flag>
+      <longflag>--tregion</longflag>
+      <label>A region value</label>
+      <description>Test region support.</description>
+      <!-- Could be more dimensions, 3D makes sense? -->
+      <default>1.0, 2.0, 3.0</default>
+    </region>
+	
+    <!-- Not yet really tested, just there to see in the gui -->
+	<point multiple="true">
+      <name>tPoints</name>
+      <flag>-x</flag>
+      <longflag>--tpoints</longflag>
+      <label>A mutiple point value</label>
+      <description>Test multiple point support.</description>
+      <!-- Default is not 'really' supported -->
+	  <!-- <default>1.0, 2.0, 3.0</default> -->
+    </point>
+
+  </parameters>
+
+</executable>

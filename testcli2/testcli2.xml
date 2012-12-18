@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<executable>
+  <category>Tests</category>
+  <title>Test CLP #2</title>
+  <description>Test IO input arguments using local nifti shared library. Example nifti data can be found at 'http://nifti.nimh.nih.gov/nifti-1/data'.</description>
+  <version>0.1</version>
+  <documentation-url>http://www.commontk.org/index.php/Documentation/CLI_In_Context</documentation-url>
+  <acknowledgements>Merci a tous!</acknowledgements> 
+  <license></license>
+  <contributor>CTK</contributor>
+    
+  <parameters>
+    <label>IO</label>
+    <description>Input/output parameters</description>
+    
+	<!-- Use fileExtensions to force the file format -->
+	<image fileExtensions=".nii">
+      <name>tImage</name>
+      <label>An image</label>
+      <channel>input</channel>
+      <index>0</index>
+      <description>Test image support.</description>
+    </image>
+    
+	<file>
+      <name>tRefImage</name>
+      <label>The reference image</label>
+      <channel>input</channel>
+      <index>1</index>
+      <description>The reference image to compare with (nifti format).</description>
+    </file>
+
+  </parameters>
+
+</executable>
